@@ -1,0 +1,50 @@
+img, embed, object, video {
+max-width:100%;
+}
+body{
+	background: #bf504d;
+  }
+
+.vt5
+{
+    color:white;
+	font-size: 42px;
+	font-family:Helvetica; 
+	font-style:normal;
+	text-align:center;
+	
+}
+.anamarija 
+{
+text-align: center;
+font-size:  17px;
+font-family: Verdana;
+color: white;
+font-style: normal;
+}
+.zelena
+{
+   color:#064727;
+}
+
+.in
+{
+     height: 80px;
+	width: 270px;	
+}
+.lovro
+{
+text-align: center;
+font-size:  17px;
+font-family: Verdana;
+color: white;
+font-style: normal;
+}
+.infokup
+{
+text-align: center;
+font-size:  17px;
+font-family: Verdana;
+color: white;
+font-style: normal;
+}

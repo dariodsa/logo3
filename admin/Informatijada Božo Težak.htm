@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html class="ng-scope" ng_app="informatijada" lang="hr"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}</style>
+
+	<title>Informatijada Božo Težak</title>
+
+	<meta charset="utf-8">
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<meta content="Project description" name="description">
+	<meta content="" name="keywords">
+	<!-- favicon -->
+	<link href="http://test.ibt.zrs.hr/img/zaruljko-icon.png?x=0.55944600%201402839991" rel="icon" type="image/gif">
+
+	<!---- CSS ----->
+
+		<!-- Bootstrap -->
+		<link href="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/bootstrap.css" rel="stylesheet" media="screen">
+
+		<!-- Font Awesome stylesheet -->
+		<link href="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/font_awesome.css" rel="stylesheet">
+
+		<!-- Lightbox stylesheet -->
+		<link href="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/jquery.css" rel="stylesheet" type="text/css">
+		<link href="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/angular-slider.css" rel="stylesheet" type="text/css">
+
+		<!-- Angular animations  -->
+
+		<link href="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/angular_animations.css" rel="stylesheet" type="text/css">
+
+
+		<!-- User less stylesheet -->
+		<link rel="stylesheet/less" type="text/css" href="http://test.ibt.zrs.hr/css/style.css">
+		<link rel="stylesheet/less" type="text/css" href="http://test.ibt.zrs.hr/css/style.less"><style id="less:css-style" type="text/css">/*#901434;*/
+body {
+  padding-top: 50px !important;
+}
+nav {
+  box-shadow: 0 0 1px #ffffff;
+  -webkit-box-shadow: 0 0 1px #ffffff;
+  -moz-box-shadow: 0 0 1px #ffffff;
+}
+.navbar {
+  background-color: #13558f;
+  border-color: #0d3a62;
+}
+.navbar .caret {
+  border-top-color: white !important;
+  border-bottom-color: white !important;
+}
+.navbar-inverse .navbar-nav > li > a,
+.navbar-brand {
+  color: white !important;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #0d3a62;
+}
+header {
+  background-color: #13558f;
+  margin-top: 0px !important;
+  color: #ffffff;
+}
+header .container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+header a,
+header a:hover {
+  color: #ffffff;
+}
+footer {
+  color: #ffffff;
+  background: #000000;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#content {
+  background: #fdfdfd;
+  border-bottom: 2px solid #eeeeee;
+  margin-bottom: 20px;
+}
+.small {
+  color: #ffffff !important;
+}
+.modal-backdrop.fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.modal-backdrop.fade.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.navbar-toggle span {
+  color: white !important;
+}
+@media (max-width: 1000px) {
+  .less-important {
+    display: none;
+  }
+}
+.navbar-brand.image {
+  padding: 0px;
+}
+.keyword {
+  color: #00B0F0;
+}
+.literal {
+  color: #E36C0A;
+}
+footer pre {
+  border: none;
+  background: transparent;
+  color: white;
+}
+.enumer {
+  padding: 10px;
+}
+.row.even {
+  background: #f4f4f4;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.row.odd,
+.row.even {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+</style>
+
+		<!-- Prism -->
+		<link href="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/prism.css" rel="stylesheet" media="screen">
+
+
+		<!-- User CSS modules -->
+		<!-- NO css -->
+
+	<!---- /CSS ----->
+
+
+	</head>
+	<body>
+
+		<!-- NAVIGATION -->
+		<img src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/bg.png" class="img-responsive">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+
+			<div class="navbar-header">
+
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span style="color:white;">Izbornik</span>
+				</button>
+
+				<a class="navbar-brand image" href="http://test.ibt.zrs.hr/"><img src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/zaruljko-transp.png" style="vertical_align:top" width="80"></a>
+				<a class="navbar-brand"><span>ZG. Informatijada</span></a>
+
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav" style="display:none">
+					<li class=""><a href="http://test.ibt.zrs.hr/"><i class="fa fa-puzzle-piece fa_align-left"></i></a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calendar fa_align-left"></i><b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><i class="fa fa-puzzle-piece fa_align-left"></i> Item</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" style="padding-right:15px;">
+					
+						<li><a href="http://test.ibt.zrs.hr/?logout=true"><i class="fa fa-key fa_align-left"></i> Odjava</a></li>
+					
+					
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+
+
+		<!-------------------------------------------------------------------------------------------->
+		<div style="min-height:500px;margin:40px;">
+			
+
+<div class="ng-scope" ng-controller="MainController">
+	
+	<!-- ngInclude: src='/ngapp/view/phase.ngview.html' --><div class="ng-scope" ng-include="src='/ngapp/view/phase.ngview.html'"><div class="row ng-scope" ng-show="cs.phase"><!-- row -->
+	<div class="col-md-12"><!-- col -->
+	
+	
+		<!-- Odbrojavanje -->
+		<div class="well"><!-- well -->
+			<div class="row">
+				<div class="col-md-2">
+					<strong class="pu ng-binding">01:31:49</strong>
+				</div>
+				<div class="col-md-8">
+					<h3 class="ng-binding" style="text_align:center;margin-top:0px;">Avvenire C++</h3>
+					<h4 class="ng-binding" style="text_align:center;">2. ogled</h4>
+				</div>
+				<div class="col-md-2">
+					<strong class="pull-right ng-binding">01:28:11</strong>
+				</div>
+			</div>
+		</div><!-- /well -->
+		
+		<!-- Vremenik -->
+		<div style="position:relative;"><!-- div -->
+			<div class="progress progress-striped active" style="height:auto;"><!-- progress -->
+				<!-- ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-success" current="0" total="180" content="0" ng-tooltip="Cekanje | 0 min" class="progress-bar progress-bar-success" style="position:relative;height:3.4em;outline:1px solid white;width: 0%;width: 0%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						0 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-success" current="15" total="180" content="1" ng-tooltip="Zagrijavanje | 15 min" class="progress-bar progress-bar-success" style="position:relative;height:3.4em;outline:1px solid white;width: 8.33%;width: 8.33%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						15 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-success" current="60" total="180" content="2" ng-tooltip="RASPOLOVNICA | 60 min" class="progress-bar progress-bar-success" style="position:relative;height:3.4em;outline:1px solid white;width: 33.33%;width: 33.33%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						60 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-success" current="5" total="180" content="3" ng-tooltip="Prva pauza | 5 min" class="progress-bar progress-bar-success" style="position:relative;height:3.4em;outline:1px solid white;width: 2.77%;width: 2.77%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						5 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-danger" current="60" total="180" content="4" ng-tooltip="DRUGI DIO | 60 min" class="progress-bar progress-bar-danger" style="position:relative;height:3.4em;outline:1px solid white;width: 33.33%;width: 33.33%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						60 min
+						<!-- ngIf: cs.phase.id == phase.id --><span class="ng-scope" ng-if="cs.phase.id == phase.id">
+							<br>
+							<small class="ng-binding">00:48:11</small>
+						</span><!-- end ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-default" current="5" total="180" content="5" ng-tooltip="Druga pauza | 5 min" class="progress-bar progress-bar-default" style="position:relative;height:3.4em;outline:1px solid white;width: 2.77%;width: 2.77%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						5 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-info" current="25" total="180" content="6" ng-tooltip="ZAVRŠNICA | 25 min" class="progress-bar progress-bar-info" style="position:relative;height:3.4em;outline:1px solid white;width: 13.88%;width: 13.88%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						25 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-info" current="0" total="180" content="7" ng-tooltip="BONUS CASE PONUDA | 0 min" class="progress-bar progress-bar-info" style="position:relative;height:3.4em;outline:1px solid white;width: 0%;width: 0%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						0 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-warning" current="0" total="180" content="8" ng-tooltip="Odabir rješenja | 0 min" class="progress-bar progress-bar-warning" style="position:relative;height:3.4em;outline:1px solid white;width: 0%;width: 0%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						0 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-warning" current="0" total="180" content="9" ng-tooltip="Pregled bodova i žalbe | 0 min" class="progress-bar progress-bar-warning" style="position:relative;height:3.4em;outline:1px solid white;width: 0%;width: 0%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						0 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-warning" current="10" total="180" content="10" ng-tooltip="Privremeni rezultati | 10 min" class="progress-bar progress-bar-warning" style="position:relative;height:3.4em;outline:1px solid white;width: 5.55%;width: 5.55%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						10 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-" current="0" total="180" content="12" ng-tooltip="Natjecanje završeno | 0 min" class="progress-bar progress-bar-" style="position:relative;height:3.4em;outline:1px solid white;width: 0%;width: 0%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						0 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><div title="" data-original-title="" ng-show="(cs.state_index &gt;= 3)" ng-repeat="(index,phase) in cs.phases" ng-progress-partial="progress-bar-" current="0" total="180" content="11" ng-tooltip="Bonus case | 0 min" class="progress-bar progress-bar-" style="position:relative;height:3.4em;outline:1px solid white;width: 0%;width: 0%"><span ng-transclude=""><!-- partial -->
+
+					<span class="ng-scope ng-binding" style="padding:3px;">
+						0 min
+						<!-- ngIf: cs.phase.id == phase.id -->
+					</span>
+
+				</span></div><!-- end ngRepeat: (index,phase) in cs.phases --><!-- /partial -->
+			</div><!-- /progress -->
+
+			<span style="position:absolute;text_align:center;bottom:-2.6em;width:20%;left:41.00925925925926%;"><!-- slider -->						
+					<i class="fa fa_arrow-up"></i><br>
+					<small class="ng-binding">DRUGI DIO</small>
+			</span><!-- slider -->
+
+		</div><!--/div  -->
+		<!-- /Vremenik -->
+		
+
+
+	</div><!-- /col -->
+</div><!-- /row -->
+
+<hr class="ng-scope">
+</div>
+				
+	<div class="row">
+		<div class="col-md-2">
+
+			<ul class="nav nav-pills nav-stacked">
+				<!-- ngRepeat: option in options | filter:navsearch --><li class="ng-scope ng-hide" ng-show="option.state_index_range.indexOf(cs.state_index) &gt;= 0" ng-repeat="option in options | filter:navsearch" data-ng-class="{ active: isActive(option.url)}"><a class="ng-binding" href="#/profile">Profil</a></li><!-- end ngRepeat: option in options | filter:navsearch --><li class="ng-scope ng-hide" ng-show="option.state_index_range.indexOf(cs.state_index) &gt;= 0" ng-repeat="option in options | filter:navsearch" data-ng-class="{ active: isActive(option.url)}"><a class="ng-binding" href="#/sloagan">Slogan</a></li><!-- end ngRepeat: option in options | filter:navsearch --><li class="ng-scope ng-hide" ng-show="option.state_index_range.indexOf(cs.state_index) &gt;= 0" ng-repeat="option in options | filter:navsearch" data-ng-class="{ active: isActive(option.url)}"><a class="ng-binding" href="#/ready">Spremnost</a></li><!-- end ngRepeat: option in options | filter:navsearch --><li class="ng-scope active" ng-show="option.state_index_range.indexOf(cs.state_index) &gt;= 0" ng-repeat="option in options | filter:navsearch" data-ng-class="{ active: isActive(option.url)}"><a class="ng-binding" href="#/solutions">Zadaci / Rješenja</a></li><!-- end ngRepeat: option in options | filter:navsearch --><li class="ng-scope" ng-show="option.state_index_range.indexOf(cs.state_index) &gt;= 0" ng-repeat="option in options | filter:navsearch" data-ng-class="{ active: isActive(option.url)}"><a class="ng-binding" href="#/messages">Poruke</a></li><!-- end ngRepeat: option in options | filter:navsearch --><li class="ng-scope ng-hide" ng-show="option.state_index_range.indexOf(cs.state_index) &gt;= 0" ng-repeat="option in options | filter:navsearch" data-ng-class="{ active: isActive(option.url)}"><a class="ng-binding" href="#/complaints">Žalbe</a></li><!-- end ngRepeat: option in options | filter:navsearch --><li class="ng-scope ng-hide" ng-show="option.state_index_range.indexOf(cs.state_index) &gt;= 0" ng-repeat="option in options | filter:navsearch" data-ng-class="{ active: isActive(option.url)}"><a class="ng-binding" href="#/results">Rezultati</a></li><!-- end ngRepeat: option in options | filter:navsearch --><li class="ng-scope" ng-show="option.state_index_range.indexOf(cs.state_index) &gt;= 0" ng-repeat="option in options | filter:navsearch" data-ng-class="{ active: isActive(option.url)}"><a class="ng-binding" href="#/rules">Pravila natjecanja</a></li><!-- end ngRepeat: option in options | filter:navsearch -->
+			</ul>
+
+
+
+			<div class="" ng-show="cs.machine">
+				<hr>
+
+<span style="font-size:8.2em;text_align;center;position:relative;">
+<pre class="ng-binding" style="position:absolute;margin:5px;margin-top:8px;background:none;border:none;"><strong class="ng-binding"></strong>
+
+
+
+</pre>
+<i class="fa fa-lg fa-desktop" style="color:#aaa;"></i></span>
+
+				<hr>
+
+				<div class="" style="text_align:center;" ng-show="menu.controller!='ProfileController'">
+
+					<!-- Profile link  -->
+					<a href="#/profile" class="thumbnail" style="display:inline-block;">
+						<!-- ngIf: cs.profile.image -->
+						<!-- ngIf: !cs.profile.image --><img src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/default.jpg" class="ng-scope" ng-if="!cs.profile.image" ng-src="photos/80x80/default.profile.png" width="80"><!-- end ngIf: !cs.profile.image --></a>
+						<br>
+						<span class="ng-binding">Lovro Sindičić</span>
+					<br>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<div class="col-md-10">
+			<!-- ngInclude: src='/ngapp/view/client.helper.ngview.html' --><div class="ng-scope" ng-include="src='/ngapp/view/client.helper.ngview.html'">
+
+<div class="alert alert-info alert-dismissable ng-scope ng-hide" ng-show="clientHelperTestMode || !clientHelperChecked">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<strong>Client Helper <i class="fa fa-spinner fa-spin"></i></strong><br><br>
+	Traženje pozadinske aplikacije za upravljanje datotekama...
+</div>
+
+<div class="alert alert-danger ng-scope" ng-show="clientHelperTestMode || !clientHelperActive &amp;&amp; clientHelperChecked">
+	<strong>Client Helper <i class="fa fa-times"></i></strong><br><br>
+	<span>Pogreška! Pozadinska aplikacija za upravljanje datotekama nije aktivna.</span><br>
+	- Pritisnite <i class="fa fa-windows"><span class="sr-only">Windows tipku</span></i> i potražite "ClientHelper" <br>
+	- Ako aplikacija nije instalirana, <a href="http://test.ibt.zrs.hr/winapp/setup.exe" target="_blank"><i class="fa fa-download"></i> preuzmite</a> i instalirajte ( potreban administrator )<br>
+	- Pozovite voditelja natjecanja da vam pomogne.
+	
+	<br><br>
+	<button class="btn btn-danger" ng-click="identify()">Pokušaj ponovno</button>
+	<a class="btn btn-danger" href="http://test.ibt.zrs.hr/winapp/setup.exe" target="_blank">Preuzmi aplikaciju</a>
+</div>
+
+<div class="alert alert-success alert-dismissable ng-scope ng-hide" ng-show="clientHelperTestMode || clientHelperActive &amp;&amp; clientHelperChecked">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<strong>Client Helper <i class="fa fa-check"></i></strong><br><br>
+	Pozadinska aplikacija za upravljanje datotekama je aktivna.
+</div></div>
+
+			<!-- User setup progress -->
+			<div class="progress ng-hide" style="height:auto;" ng-show="(cs.state_index &lt; 3)">
+			  <div class="progress-bar progress-bar-success" style="width: 25%">
+				Prijava
+				<br><i class="fa fa-lg fa-check"></i>
+			  </div>
+			  <div class="progress-bar progress-bar-success" ng-class="{'progress-bar-success':(cs.state_index&gt;0)}" style="width: 25%">
+				Profil
+				<br><i class="fa fa-lg fa-check" ng-class="{'fa-check':(cs.state_index&gt;0)}"></i>
+			  </div>
+			  <div class="progress-bar progress-bar-success" ng-class="{'progress-bar-success':(cs.state_index&gt;1)}" style="width: 25%">
+				Slogan
+				<br><i class="fa fa-lg fa-check" ng-class="{'fa-check':(cs.state_index&gt;1)}"></i>
+			  </div>
+			  <div class="progress-bar progress-bar-success" ng-class="{'progress-bar-success':(cs.state_index&gt;2)}" style="width: 25%">
+				Spremnost
+				<br><i class="fa fa-lg fa-check" ng-class="{'fa-check':(cs.state_index&gt;2)}"></i>
+			  </div>
+			</div>
+
+
+			<!-- ngView:  --><div class="ng-scope" ng-view=""><h3 class="ng-scope">Zadaci / Rješenja <small>Pristup zadacima i pregled vlastitih rješenja</small></h3>
+<hr class="ng-scope">
+
+<!-- REVISION modal -->
+<div class="modal fade ng-scope" modal-show="revisionDetails">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title ng-binding">Zadatak:  | Revizija: </h4>
+      </div>
+      <div class="modal-body">
+        <pre class="ng-binding"></pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="">Zatvori</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- TESTCASE modal -->
+<div class="modal fade ng-scope" modal-show="testcase">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title ng-binding">Zadatak:  | Revizija za provjeru:  | Najsvježija revizija: <a class="ng-binding" href="javascript:void(0)" ng-click="previewTestCases(testcase.problem,testcase.problem.revisions[0])"></a></h4>
+      </div>
+      <div class="modal-body">
+        <!-- ngInclude: src="/ngapp/view/testcase.ngview.html" --><div class="ng-scope" ng-include="src=&quot;/ngapp/view/testcase.ngview.html&quot;">
+<strong class="ng-scope">Napomene</strong>
+<ul class="ng-scope">
+	<li>Ulazni i izlazni podaci su ograničeni na 1KB (1024 B)</li>
+	<li>Provjera ispravnosti se vrši tekstualnom usporedbom prvih 1024 znakova zanemarujući početne i završne razmake</li>
+	<li class="ng-binding">Broj test primjera za provjeru je ograničen na 0</li>
+	<li>Provjera ne garantira ispravnost pri službenoj evaluaciji</li>
+</ul>
+<hr class="ng-scope">
+<table class="table table-striped table-bordered table-hover ng-scope">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Ulaz</td>
+			<td>Očekivani izlaz</td>
+			<td>Stvarni izlaz</td>
+			<td>Status</td>
+			<td>Vrijeme (ms)</td>
+			<td>Memorija (KiB)</td>
+			<td>Ispravno</td>
+			<td>Ukloni</td>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- ngRepeat: (i,test) in testcase.tests track by $index -->
+	</tbody>
+</table>
+
+
+<button class="btn btn-primary pull-right ng-scope" ng-click="cs.runTests(testcase)" ng-disabled="testcase.busy">
+<i class="fa fa-spinner fa-spin ng-hide" ng-show="testcase.busy"></i>
+<i class="fa fa_arrow-right" ng-hide="testcase.busy"></i> 
+Provjeri
+</button>
+<button class="btn btn-success ng-scope" ng-click="cs.addTest(testcase)" ng-disabled="testcase.tests.length &gt;= cs.maxTestsPerUser"><i class="fa fa-plus"></i> Dodaj primjer</button></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="">Zatvori</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<!-- BONUS CASE modal -->
+<div class="modal fade ng-scope" modal-show="cs.isBonusCaseOffering">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">        
+        <h4 class="modal-title">BONUS CASE ponuda</h4>
+      </div>
+      <div class="modal-body">
+        <!-- ngInclude: src="/ngapp/view/bonuscase.ngview.html" --><div class="ng-scope" ng-include="src=&quot;/ngapp/view/bonuscase.ngview.html&quot;">
+<div class="ng-scope" style="text_align:center;">
+	<h3>Uzimaš li u dobru ili zlu <br><br> ovaj BONUS CASE zadatak?</h3>
+		
+	<i class="fa fa-gift" style="font-size:8em"></i><br><br>
+	
+	<button class="btn btn-lg btn-success" ng-disabled="cs.bonusCaseAnswered" ng-click="cs.acceptBonusCase()"> UZIMAM </button>
+	<button class="btn btn-lg btn-danger" ng-disabled="cs.bonusCaseAnswered" ng-click="cs.rejectBonusCase()"> ODBIJAM </button>
+</div>
+
+<hr class="ng-scope"><span class="ng-scope">
+
+	Možeš zaraditi od -50 do 400 dodatnih bodova. Osvojiš li X bodova, znači da će vrijediti</span><br class="ng-scope">
+	<pre class="ng-scope">bodovi = ( X &gt;= 200 ) ?  <span style="color:green;">X</span> : <span style="color:red;">( ( 200 - X ) / 4 )</span> ;</pre>
+
+<hr class="ng-scope"><span class="ng-scope">
+
+Preostalo za odgovoriti:</span><br class="ng-scope">
+<strong class="ng-scope ng-binding">00:48:11<strong></strong></strong></div>
+      </div>      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="container ng-scope" style="display:none">
+
+	<div class="alert alert-danger" ng-show="error">
+		<h1 class="ng-binding">Connection error <small class="ng-binding">( 0 )</small></h1> <br>
+		<div class="ng-hide" ng-show="error.type=='API error'">
+			<strong class="ng-binding"></strong><br>
+			<strong class="ng-binding"></strong><br>
+		</div>
+		<div class="" ng-show="error.type!='API error'">
+			<strong class="ng-binding"></strong>
+		</div>
+
+
+		<strong></strong><br>
+		<span class="ng-binding">http://localhost:8061/CreateIfNotExist</span>
+	</div>
+</div>
+
+<div class="ng-scope">
+	<!-- ngRepeat: round in cs.rounds --><div class="ng-scope" ng-repeat="round in cs.rounds">
+
+		<ul class="nav nav-pills">
+			<!-- ngRepeat: problem in round.problems --><li class="ng-scope" ng-repeat="problem in round.problems">
+				<a class="thumbnail btn" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=104" target="_blank" ng-disabled="!(problem.is_problem_available*1)" style="text_align:center">
+						
+						<div class="ng-hide" ng-show="(problem.is_bonus_case*1)">
+							<i class="fa fa-gift" style="font-size:4em"></i><br>
+							<hr>
+							<strong> <i class="fa fa-caret-left"></i> BONUS CASE <i class="fa fa-caret-right"></i> </strong><br>
+							<span class="ng-binding">40 bodova</span><br>
+							
+						</div>
+						<div class="" ng-show="!(problem.is_bonus_case*1)">
+							<i class="fa fa-puzzle-piece ng-binding" style="font-size:4em"> 1</i><br>
+							<hr>
+							<strong class="ng-binding">Semafor</strong><br>
+							<span class="ng-binding">40 bodova</span><br>
+						</div>
+				</a>
+			</li><!-- end ngRepeat: problem in round.problems --><li class="ng-scope" ng-repeat="problem in round.problems">
+				<a class="thumbnail btn" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=105" target="_blank" ng-disabled="!(problem.is_problem_available*1)" style="text_align:center">
+						
+						<div class="ng-hide" ng-show="(problem.is_bonus_case*1)">
+							<i class="fa fa-gift" style="font-size:4em"></i><br>
+							<hr>
+							<strong> <i class="fa fa-caret-left"></i> BONUS CASE <i class="fa fa-caret-right"></i> </strong><br>
+							<span class="ng-binding">40 bodova</span><br>
+							
+						</div>
+						<div class="" ng-show="!(problem.is_bonus_case*1)">
+							<i class="fa fa-puzzle-piece ng-binding" style="font-size:4em"> 2</i><br>
+							<hr>
+							<strong class="ng-binding">Lucija</strong><br>
+							<span class="ng-binding">40 bodova</span><br>
+						</div>
+				</a>
+			</li><!-- end ngRepeat: problem in round.problems --><li class="ng-scope" ng-repeat="problem in round.problems">
+				<a class="thumbnail btn" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=106" target="_blank" ng-disabled="!(problem.is_problem_available*1)" style="text_align:center">
+						
+						<div class="ng-hide" ng-show="(problem.is_bonus_case*1)">
+							<i class="fa fa-gift" style="font-size:4em"></i><br>
+							<hr>
+							<strong> <i class="fa fa-caret-left"></i> BONUS CASE <i class="fa fa-caret-right"></i> </strong><br>
+							<span class="ng-binding">80 bodova</span><br>
+							
+						</div>
+						<div class="" ng-show="!(problem.is_bonus_case*1)">
+							<i class="fa fa-puzzle-piece ng-binding" style="font-size:4em"> 3</i><br>
+							<hr>
+							<strong class="ng-binding">Pokloni</strong><br>
+							<span class="ng-binding">80 bodova</span><br>
+						</div>
+				</a>
+			</li><!-- end ngRepeat: problem in round.problems --><li class="ng-scope" ng-repeat="problem in round.problems">
+				<a class="thumbnail btn" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=107" target="_blank" ng-disabled="!(problem.is_problem_available*1)" style="text_align:center">
+						
+						<div class="ng-hide" ng-show="(problem.is_bonus_case*1)">
+							<i class="fa fa-gift" style="font-size:4em"></i><br>
+							<hr>
+							<strong> <i class="fa fa-caret-left"></i> BONUS CASE <i class="fa fa-caret-right"></i> </strong><br>
+							<span class="ng-binding">80 bodova</span><br>
+							
+						</div>
+						<div class="" ng-show="!(problem.is_bonus_case*1)">
+							<i class="fa fa-puzzle-piece ng-binding" style="font-size:4em"> 4</i><br>
+							<hr>
+							<strong class="ng-binding">Predugo</strong><br>
+							<span class="ng-binding">80 bodova</span><br>
+						</div>
+				</a>
+			</li><!-- end ngRepeat: problem in round.problems --><li class="ng-scope" ng-repeat="problem in round.problems">
+				<a class="thumbnail btn" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=108" target="_blank" ng-disabled="!(problem.is_problem_available*1)" style="text_align:center">
+						
+						<div class="ng-hide" ng-show="(problem.is_bonus_case*1)">
+							<i class="fa fa-gift" style="font-size:4em"></i><br>
+							<hr>
+							<strong> <i class="fa fa-caret-left"></i> BONUS CASE <i class="fa fa-caret-right"></i> </strong><br>
+							<span class="ng-binding">160 bodova</span><br>
+							
+						</div>
+						<div class="" ng-show="!(problem.is_bonus_case*1)">
+							<i class="fa fa-puzzle-piece ng-binding" style="font-size:4em"> 5</i><br>
+							<hr>
+							<strong class="ng-binding">Pikule</strong><br>
+							<span class="ng-binding">160 bodova</span><br>
+						</div>
+				</a>
+			</li><!-- end ngRepeat: problem in round.problems --><li class="ng-scope" ng-repeat="problem in round.problems">
+				<a class="thumbnail btn" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=109" target="_blank" ng-disabled="!(problem.is_problem_available*1)" style="text_align:center">
+						
+						<div class="ng-hide" ng-show="(problem.is_bonus_case*1)">
+							<i class="fa fa-gift" style="font-size:4em"></i><br>
+							<hr>
+							<strong> <i class="fa fa-caret-left"></i> BONUS CASE <i class="fa fa-caret-right"></i> </strong><br>
+							<span class="ng-binding">160 bodova</span><br>
+							
+						</div>
+						<div class="" ng-show="!(problem.is_bonus_case*1)">
+							<i class="fa fa-puzzle-piece ng-binding" style="font-size:4em"> 6</i><br>
+							<hr>
+							<strong class="ng-binding">Volumen</strong><br>
+							<span class="ng-binding">160 bodova</span><br>
+						</div>
+				</a>
+			</li><!-- end ngRepeat: problem in round.problems --><li class="ng-scope" ng-repeat="problem in round.problems">
+				<a class="thumbnail btn" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=110" target="_blank" ng-disabled="!(problem.is_problem_available*1)" style="text_align:center">
+						
+						<div class="ng-hide" ng-show="(problem.is_bonus_case*1)">
+							<i class="fa fa-gift" style="font-size:4em"></i><br>
+							<hr>
+							<strong> <i class="fa fa-caret-left"></i> BONUS CASE <i class="fa fa-caret-right"></i> </strong><br>
+							<span class="ng-binding">220 bodova</span><br>
+							
+						</div>
+						<div class="" ng-show="!(problem.is_bonus_case*1)">
+							<i class="fa fa-puzzle-piece ng-binding" style="font-size:4em"> 7</i><br>
+							<hr>
+							<strong class="ng-binding">Cvijece</strong><br>
+							<span class="ng-binding">220 bodova</span><br>
+						</div>
+				</a>
+			</li><!-- end ngRepeat: problem in round.problems --><li class="ng-scope" ng-repeat="problem in round.problems">
+				<a class="thumbnail btn" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=111" target="_blank" ng-disabled="!(problem.is_problem_available*1)" style="text_align:center">
+						
+						<div class="ng-hide" ng-show="(problem.is_bonus_case*1)">
+							<i class="fa fa-gift" style="font-size:4em"></i><br>
+							<hr>
+							<strong> <i class="fa fa-caret-left"></i> BONUS CASE <i class="fa fa-caret-right"></i> </strong><br>
+							<span class="ng-binding">220 bodova</span><br>
+							
+						</div>
+						<div class="" ng-show="!(problem.is_bonus_case*1)">
+							<i class="fa fa-puzzle-piece ng-binding" style="font-size:4em"> 8</i><br>
+							<hr>
+							<strong class="ng-binding">Bond</strong><br>
+							<span class="ng-binding">220 bodova</span><br>
+						</div>
+				</a>
+			</li><!-- end ngRepeat: problem in round.problems -->
+		</ul>
+
+
+		<table class="table table-bordered table-striped">
+				<thead>
+					<tr><th>R.br</th>
+					<th>Zadatak</th>
+					<th>Bodovi</th>
+					<th>Vrijeme</th>
+					<th>Memorija</th>
+					<th>Datoteka</th>
+					<th>Revizija</th>
+					<th>Hash</th>
+					<th>Spremljeno</th>
+					<th>Poslano</th>
+					<th>Status</th>
+					<th>Provjera</th>
+				</tr></thead>
+				<tbody>
+					<!-- ngRepeat: problem in round.problems --><!-- ngIf: (problem.is_problem_available*1) --><tr class="ng-scope" ng-repeat="problem in round.problems" ng-if="(problem.is_problem_available*1)">
+						<td class="ng-binding">1</td>
+						<td><a class="ng-binding" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=104" target="_blank">Semafor</a></td>
+						<td class="ng-binding">40</td>
+						<td class="ng-binding">1000 ms</td>
+						<td class="ng-binding">64000 KiB</td>
+						<td class="ng-binding">semafor.cpp</td>
+						<td><a class="ng-binding" href="#/revisions/104"><i class="fa fa-code-fork"></i> </a></td>
+						<td class="ng-binding"></td>
+						<td class="ng-binding">n/a</td>
+						<td class="ng-binding">n/a</td>
+						<td style="width:200px;"><a class="ng-binding" href="javascript:void(0);" ng-click="previewRevisionDetails(problem , problem.revisions[0])" ng-bind-html="problem.revisions[0].state | stateDisplay"></a></td>
+						<td>
+						<a href="javascript:void(0)" class="btn btn-default ng-hide" ng-show="(problem.revisions[0].state == 'EVALUATION_COMPLETE') || (problem.revisions[0].state == 'EVALUATION_PROGRESS') || (problem.revisions[0].state == 'COMPILED')" ng-click="previewTestCases(problem,problem.revisions[0])">
+						<i class="fa fa_arrow-right"></i>
+						</a>
+						</td>
+					</tr><!-- end ngIf: (problem.is_problem_available*1) --><!-- end ngRepeat: problem in round.problems --><!-- ngIf: (problem.is_problem_available*1) --><tr class="ng-scope" ng-repeat="problem in round.problems" ng-if="(problem.is_problem_available*1)">
+						<td class="ng-binding">2</td>
+						<td><a class="ng-binding" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=105" target="_blank">Lucija</a></td>
+						<td class="ng-binding">40</td>
+						<td class="ng-binding">1000 ms</td>
+						<td class="ng-binding">64000 KiB</td>
+						<td class="ng-binding">lucija.cpp</td>
+						<td><a class="ng-binding" href="#/revisions/105"><i class="fa fa-code-fork"></i> </a></td>
+						<td class="ng-binding"></td>
+						<td class="ng-binding">n/a</td>
+						<td class="ng-binding">n/a</td>
+						<td style="width:200px;"><a class="ng-binding" href="javascript:void(0);" ng-click="previewRevisionDetails(problem , problem.revisions[0])" ng-bind-html="problem.revisions[0].state | stateDisplay"></a></td>
+						<td>
+						<a href="javascript:void(0)" class="btn btn-default ng-hide" ng-show="(problem.revisions[0].state == 'EVALUATION_COMPLETE') || (problem.revisions[0].state == 'EVALUATION_PROGRESS') || (problem.revisions[0].state == 'COMPILED')" ng-click="previewTestCases(problem,problem.revisions[0])">
+						<i class="fa fa_arrow-right"></i>
+						</a>
+						</td>
+					</tr><!-- end ngIf: (problem.is_problem_available*1) --><!-- end ngRepeat: problem in round.problems --><!-- ngIf: (problem.is_problem_available*1) --><tr class="ng-scope" ng-repeat="problem in round.problems" ng-if="(problem.is_problem_available*1)">
+						<td class="ng-binding">3</td>
+						<td><a class="ng-binding" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=106" target="_blank">Pokloni</a></td>
+						<td class="ng-binding">80</td>
+						<td class="ng-binding">1000 ms</td>
+						<td class="ng-binding">64000 KiB</td>
+						<td class="ng-binding">pokloni.cpp</td>
+						<td><a class="ng-binding" href="#/revisions/106"><i class="fa fa-code-fork"></i> </a></td>
+						<td class="ng-binding"></td>
+						<td class="ng-binding">n/a</td>
+						<td class="ng-binding">n/a</td>
+						<td style="width:200px;"><a class="ng-binding" href="javascript:void(0);" ng-click="previewRevisionDetails(problem , problem.revisions[0])" ng-bind-html="problem.revisions[0].state | stateDisplay"></a></td>
+						<td>
+						<a href="javascript:void(0)" class="btn btn-default ng-hide" ng-show="(problem.revisions[0].state == 'EVALUATION_COMPLETE') || (problem.revisions[0].state == 'EVALUATION_PROGRESS') || (problem.revisions[0].state == 'COMPILED')" ng-click="previewTestCases(problem,problem.revisions[0])">
+						<i class="fa fa_arrow-right"></i>
+						</a>
+						</td>
+					</tr><!-- end ngIf: (problem.is_problem_available*1) --><!-- end ngRepeat: problem in round.problems --><!-- ngIf: (problem.is_problem_available*1) --><tr class="ng-scope" ng-repeat="problem in round.problems" ng-if="(problem.is_problem_available*1)">
+						<td class="ng-binding">4</td>
+						<td><a class="ng-binding" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=107" target="_blank">Predugo</a></td>
+						<td class="ng-binding">80</td>
+						<td class="ng-binding">1000 ms</td>
+						<td class="ng-binding">64000 KiB</td>
+						<td class="ng-binding">predugo.cpp</td>
+						<td><a class="ng-binding" href="#/revisions/107"><i class="fa fa-code-fork"></i> </a></td>
+						<td class="ng-binding"></td>
+						<td class="ng-binding">n/a</td>
+						<td class="ng-binding">n/a</td>
+						<td style="width:200px;"><a class="ng-binding" href="javascript:void(0);" ng-click="previewRevisionDetails(problem , problem.revisions[0])" ng-bind-html="problem.revisions[0].state | stateDisplay"></a></td>
+						<td>
+						<a href="javascript:void(0)" class="btn btn-default ng-hide" ng-show="(problem.revisions[0].state == 'EVALUATION_COMPLETE') || (problem.revisions[0].state == 'EVALUATION_PROGRESS') || (problem.revisions[0].state == 'COMPILED')" ng-click="previewTestCases(problem,problem.revisions[0])">
+						<i class="fa fa_arrow-right"></i>
+						</a>
+						</td>
+					</tr><!-- end ngIf: (problem.is_problem_available*1) --><!-- end ngRepeat: problem in round.problems --><!-- ngIf: (problem.is_problem_available*1) --><tr class="ng-scope" ng-repeat="problem in round.problems" ng-if="(problem.is_problem_available*1)">
+						<td class="ng-binding">5</td>
+						<td><a class="ng-binding" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=108" target="_blank">Pikule</a></td>
+						<td class="ng-binding">160</td>
+						<td class="ng-binding">1000 ms</td>
+						<td class="ng-binding">64000 KiB</td>
+						<td class="ng-binding">pikule.cpp</td>
+						<td><a class="ng-binding" href="#/revisions/108"><i class="fa fa-code-fork"></i> </a></td>
+						<td class="ng-binding"></td>
+						<td class="ng-binding">n/a</td>
+						<td class="ng-binding">n/a</td>
+						<td style="width:200px;"><a class="ng-binding" href="javascript:void(0);" ng-click="previewRevisionDetails(problem , problem.revisions[0])" ng-bind-html="problem.revisions[0].state | stateDisplay"></a></td>
+						<td>
+						<a href="javascript:void(0)" class="btn btn-default ng-hide" ng-show="(problem.revisions[0].state == 'EVALUATION_COMPLETE') || (problem.revisions[0].state == 'EVALUATION_PROGRESS') || (problem.revisions[0].state == 'COMPILED')" ng-click="previewTestCases(problem,problem.revisions[0])">
+						<i class="fa fa_arrow-right"></i>
+						</a>
+						</td>
+					</tr><!-- end ngIf: (problem.is_problem_available*1) --><!-- end ngRepeat: problem in round.problems --><!-- ngIf: (problem.is_problem_available*1) --><tr class="ng-scope" ng-repeat="problem in round.problems" ng-if="(problem.is_problem_available*1)">
+						<td class="ng-binding">6</td>
+						<td><a class="ng-binding" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=109" target="_blank">Volumen</a></td>
+						<td class="ng-binding">160</td>
+						<td class="ng-binding">1000 ms</td>
+						<td class="ng-binding">64000 KiB</td>
+						<td class="ng-binding">volumen.cpp</td>
+						<td><a class="ng-binding" href="#/revisions/109"><i class="fa fa-code-fork"></i> </a></td>
+						<td class="ng-binding"></td>
+						<td class="ng-binding">n/a</td>
+						<td class="ng-binding">n/a</td>
+						<td style="width:200px;"><a class="ng-binding" href="javascript:void(0);" ng-click="previewRevisionDetails(problem , problem.revisions[0])" ng-bind-html="problem.revisions[0].state | stateDisplay"></a></td>
+						<td>
+						<a href="javascript:void(0)" class="btn btn-default ng-hide" ng-show="(problem.revisions[0].state == 'EVALUATION_COMPLETE') || (problem.revisions[0].state == 'EVALUATION_PROGRESS') || (problem.revisions[0].state == 'COMPILED')" ng-click="previewTestCases(problem,problem.revisions[0])">
+						<i class="fa fa_arrow-right"></i>
+						</a>
+						</td>
+					</tr><!-- end ngIf: (problem.is_problem_available*1) --><!-- end ngRepeat: problem in round.problems --><!-- ngIf: (problem.is_problem_available*1) --><tr class="ng-scope" ng-repeat="problem in round.problems" ng-if="(problem.is_problem_available*1)">
+						<td class="ng-binding">7</td>
+						<td><a class="ng-binding" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=110" target="_blank">Cvijece</a></td>
+						<td class="ng-binding">220</td>
+						<td class="ng-binding">1000 ms</td>
+						<td class="ng-binding">64000 KiB</td>
+						<td class="ng-binding">cvijece.cpp</td>
+						<td><a class="ng-binding" href="#/revisions/110"><i class="fa fa-code-fork"></i> </a></td>
+						<td class="ng-binding"></td>
+						<td class="ng-binding">n/a</td>
+						<td class="ng-binding">n/a</td>
+						<td style="width:200px;"><a class="ng-binding" href="javascript:void(0);" ng-click="previewRevisionDetails(problem , problem.revisions[0])" ng-bind-html="problem.revisions[0].state | stateDisplay"></a></td>
+						<td>
+						<a href="javascript:void(0)" class="btn btn-default ng-hide" ng-show="(problem.revisions[0].state == 'EVALUATION_COMPLETE') || (problem.revisions[0].state == 'EVALUATION_PROGRESS') || (problem.revisions[0].state == 'COMPILED')" ng-click="previewTestCases(problem,problem.revisions[0])">
+						<i class="fa fa_arrow-right"></i>
+						</a>
+						</td>
+					</tr><!-- end ngIf: (problem.is_problem_available*1) --><!-- end ngRepeat: problem in round.problems --><!-- ngIf: (problem.is_problem_available*1) --><tr class="ng-scope" ng-repeat="problem in round.problems" ng-if="(problem.is_problem_available*1)">
+						<td class="ng-binding">8</td>
+						<td><a class="ng-binding" href="http://test.ibt.zrs.hr/api/Problem/@GetProblemDocument?id=111" target="_blank">Bond</a></td>
+						<td class="ng-binding">220</td>
+						<td class="ng-binding">1000 ms</td>
+						<td class="ng-binding">256000 KiB</td>
+						<td class="ng-binding">bond.cpp</td>
+						<td><a class="ng-binding" href="#/revisions/111"><i class="fa fa-code-fork"></i> </a></td>
+						<td class="ng-binding"></td>
+						<td class="ng-binding">n/a</td>
+						<td class="ng-binding">n/a</td>
+						<td style="width:200px;"><a class="ng-binding" href="javascript:void(0);" ng-click="previewRevisionDetails(problem , problem.revisions[0])" ng-bind-html="problem.revisions[0].state | stateDisplay"></a></td>
+						<td>
+						<a href="javascript:void(0)" class="btn btn-default ng-hide" ng-show="(problem.revisions[0].state == 'EVALUATION_COMPLETE') || (problem.revisions[0].state == 'EVALUATION_PROGRESS') || (problem.revisions[0].state == 'COMPILED')" ng-click="previewTestCases(problem,problem.revisions[0])">
+						<i class="fa fa_arrow-right"></i>
+						</a>
+						</td>
+					</tr><!-- end ngIf: (problem.is_problem_available*1) --><!-- end ngRepeat: problem in round.problems -->
+			</tbody>
+		</table>
+
+
+		Programski jezik: <span class="label label-lg label-warning ng-binding">C++</span>
+		<!--
+		<select
+			ng-init=""
+			class="form-control"
+			ng-model="round.chosen_language"
+			ng-change=""
+		ng-options="
+			lang as lang.name
+			for lang
+			in round.subcontest.languages
+		"></select>
+		-->
+
+		<!--
+		<button class="btn btn-primary btn-lg" ng-click="cs.submit()" ng-disabled="cs.submitting.length > 0">Slanje <small>( {{cs.autoSubmitTimer/1000}} )</small></button>
+		-->
+	</div><!-- end ngRepeat: round in cs.rounds -->
+</div>
+</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" modal-show="cs.msg">
+	  <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title ng-binding">Notifikacija (0)</h4>
+			  </div>
+				  <div class="modal-body ng-binding">
+					<p class="alert alert-info ng-binding">
+						
+					</p>
+					 | 
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cs.markAsRead(cs.msg);">Zatvori</button>
+				  </div>
+			</div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+</div>
+		
+
+		<!-------------------------------------------------------------------------------------------->
+
+		<img src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/bg.png" class="img-responsive">
+		<footer>
+			<div class="container">
+				<div class="pull-right less-important">
+					<a href="http://web.zrs.hr/"><img src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/zrs-inverted.png"></a>
+				</div>
+				
+<pre class="plain"><span class="keyword">char</span>  __[] = {<span class="literal">'|'</span>};
+<span class="keyword">long</span>    rr = <span class="literal">0x7C3123</span>;
+printf( __ );</pre>
+	
+			</div>
+		</footer>
+
+
+		<!-- Place google analytics to view/google.analytics.html -->
+
+
+
+		<!---- Javascript ---->
+
+			<!-- jQuery -->
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/jquery_002.js" type="text/javascript"></script>
+
+			<!-- Less -->
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/less.js" type="text/javascript"></script>
+
+			<!-- Bootstrap -->
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/bootstrap.js"></script>
+
+			<!-- Angular -->
+			<script type="text/javascript" src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/angular.js"></script>
+			<script type="text/javascript" src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/angular_animate.js"></script>
+			<script type="text/javascript" src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/angular-route.js"></script>
+			<script type="text/javascript" src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/angular_002.js"></script>
+			<script type="text/javascript" src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/angular-file-upload.js"></script>
+
+
+
+			<!-- Slider -->
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/angular-touch.js"></script>
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/angular-slider.js"></script>
+
+
+			<!-- Prism -->
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/prism.js"></script>
+
+			<!-- Plugins -->
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/jquery_003.js" type="text/javascript"></script>
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/jquery-layer.js" type="text/javascript"></script>
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/jquery.js" type="text/javascript"></script>
+
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/ng.js" type="text/javascript"></script>
+
+			
+				<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/app.js" type="text/javascript"></script>
+				<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/upload.js" type="text/javascript"></script>
+				<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/main.js" type="text/javascript"></script>
+				<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/solutions.js" type="text/javascript"></script>
+				<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/profile.js" type="text/javascript"></script>
+				<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/complaints.js" type="text/javascript"></script>
+				<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/revisions.js" type="text/javascript"></script>
+				<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/messages.js" type="text/javascript"></script>
+				<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/rules.js" type="text/javascript"></script>				
+
+			
+
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/app_002.js" type="text/javascript"></script>
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/app_004.js" type="text/javascript"></script>
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/app_003.js" type="text/javascript"></script>
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/api.js" type="text/javascript"></script>
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/client_002.js" type="text/javascript"></script>
+			<script src="Informatijada%20Bo%C5%BEo%20Te%C5%BEak_files/client.js" type="text/javascript"></script>
+
+
+
+
+			<script type="text/javascript">
+				<!-- todo : place to template view -->
+
+			</script>
+
+			<!-- User javascript modules -->
+			<!-- NO javascript -->
+
+		<!---- /Javascript ---->
+	
+	
+</body><!-- Web Development: Kristijan Burnik @ InVision Web Development :: http://www.invision-web.net --></html>

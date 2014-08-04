@@ -1,0 +1,12 @@
+to main
+make "sajz 1
+repeat 37
+[
+  fd 200
+  setlabelheight :sajz
+make "sajz  :sajz + 2
+  label "Pero
+  bk 200
+  rt 10
+]
+end

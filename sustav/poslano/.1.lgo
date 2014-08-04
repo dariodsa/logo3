@@ -1,0 +1,3 @@
+to dario :n :a
+repeat :n[fd :a rt 360/:n]
+end

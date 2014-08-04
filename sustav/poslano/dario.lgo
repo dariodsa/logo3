@@ -1,0 +1,27 @@
+ICON "FMSLogo
+WINDOWSET "FMSLogo 0
+CHDIR "poslano
+mkdir "4
+CHDIR "4
+to dario :n :a
+  repeat :n[fd :a rt 360/:n] 
+  cs f3d 100
+end
+
+to eva
+    FOR[I 0 9 1][ PR :I dario :I 50 make "ia :I make "slika [slika] make "eks [.bmp] make "dira se :slika :ia make "dir se :dira :eks BITSAVE :dir PR :dir cs]
+	bye
+end
+OPENWRITE "dummy.fil
+SETWRITE "dummy.fil
+PRINT [Sve OK]
+SETWRITE []
+CLOSE "dummy.fil
+MAKE "STARTUP [eva]
+RUN eva
+CATCH "ERROR [eva]
+OPENWRITE "dummy.fil
+SETWRITE "dummy.fil 
+PRINT ERROR
+SETWRITE []
+CLOSE "dummy.fil  

@@ -1,0 +1,48 @@
+to dario :n :a
+repeat :n[fd :a rt 360/:n]
+PRINT "dario
+end
+
+to kraj
+ bye
+end
+to eva
+dario 3 50
+BITSAVE [slika 0 .bmp]
+cs
+dario 4 50
+BITSAVE [slika 1 .bmp]
+cs
+dario 5 50
+BITSAVE [slika 2 .bmp]
+cs
+dario 6 50
+BITSAVE [slika 3 .bmp]
+cs
+dario 7 50
+BITSAVE [slika 4 .bmp]
+cs
+dario 8 50
+BITSAVE [slika 5 .bmp]
+cs
+end
+
+ 
+ICON "FMSLogo
+;WINDOWSET "FMSLogo 0
+CHDIR "poslano
+mkdir "4
+CHDIR "4
+OPENWRITE "dummy.fil
+SETWRITE "dummy.fil
+PRINT [Sve OK]
+SETWRITE []
+CLOSE "dummy.fil
+MAKE "STARTUP [eva]
+CATCH "ERROR [eva]
+OPENWRITE "dummy.fil
+SETWRITE "dummy.fil 
+PRINT ERROR
+SETWRITE []
+CLOSE "dummy.fil  
+RUN kraj
